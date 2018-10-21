@@ -1,0 +1,38 @@
+
+
+<p id="notice"><%#= notice %></p>
+
+<div style="margin-left:18%">
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.body %>
+</p>
+<p>
+  <strong>User:</strong>
+  <%= @post.user.email %>
+</p>
+</div>
+
+<div style="margin-left:20%">
+
+<section class="section comments">
+    <div class="container">
+        <h2 class="subtitle is-5"><strong><%= @post.comments.count %></strong> Comments</h2>
+        <%= render @post.comments %>
+        <div class="comment-form">
+            <hr />
+            <h3 class="subtitle is-3">Give Feedback</h3>
+             <%= render 'comments/form' %>
+        </div>
+    </div>
+</section>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
+
+</div>

@@ -1,0 +1,31 @@
+<div style="margin-top:5%;">
+<h1><center> Welcome to Instant Systems Blog Assignment</center></h1>
+</div>
+
+
+<div style="font-size:20px; margin-top:15%;">
+<center>
+<%= link_to 'Click me to see posts', posts_path %>
+</center>
+</div>
+
+<% if current_user %>
+<div style="font-size:20px; margin-top:3%;"><center>
+	<%= link_to 'Log out', destroy_user_session_path,method: :delete %>
+	</center>
+</div>
+
+<%else%>
+<div style="font-size:20px; margin-top:3%;">
+<center>
+	<%= link_to 'Log in', new_user_session_path %>
+	<%= link_to 'Sign up', new_user_registration_path %>
+</center>
+</div>
+
+<%end%>
+
+
+
+
+<!-- <p>Find me in app/views/pages/home.html.erb</p> -->
